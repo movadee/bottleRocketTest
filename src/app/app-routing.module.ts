@@ -5,8 +5,8 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 
 const routes: Routes = [
   { path: '', redirectTo: '/restaurants', pathMatch: 'full' },
-  { path: 'restaurants', component: RestaurantsComponent },
-  { path: 'restaurant-detail/:id', component: RestaurantDetailComponent },
+  { path: 'restaurants', component: RestaurantsComponent, data: {animation: 'RestaurantsPage'} },
+  { path: 'restaurant-detail/:id', component: RestaurantDetailComponent, data: {animation: 'RestaurantDetailPage'} },
 ];
 
 @NgModule({

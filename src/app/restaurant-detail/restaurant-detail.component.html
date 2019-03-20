@@ -16,7 +16,7 @@
     <div>{{restaurant.location.formattedAddress[1]}}</div>
   </div>
   <ng-container *ngIf="restaurant.contact">
-    <a class="restaurant-phone" href="tel:9723872337">{{restaurant.contact.formattedPhone}}</a>
-    <a *ngIf="restaurant.contact.twitter" class="restaurant-twitter" href="https://twitter.com/hopdoddy">@{{restaurant.contact.twitter}}</a>
+    <a class="restaurant-phone" href="tel:{{restaurant.contact.phone}}">{{restaurant.contact.formattedPhone}}</a>
+    <a *ngIf="restaurant.contact.twitter" class="restaurant-twitter" href="https://twitter.com/{{restaurant.contact.twitter}}">@{{restaurant.contact.twitter}}</a>
   </ng-container>
 </div>
