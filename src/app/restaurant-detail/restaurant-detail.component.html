@@ -7,8 +7,8 @@
 </div>
 <div class="restaurant-info">
   <div class="restaurant-address">
-    {{restaurant.location.formattedAddress[0]}} <br>
-    {{restaurant.location.formattedAddress[1]}}
+    <div>{{restaurant.location.formattedAddress[0]}}</div>
+    <div>{{restaurant.location.formattedAddress[1]}}</div>
   </div>
   <ng-container *ngIf="restaurant.contact">
     <a class="restaurant-phone" href="tel:9723872337">{{restaurant.contact.formattedPhone}}</a>
