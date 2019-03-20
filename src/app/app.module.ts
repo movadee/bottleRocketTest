@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppLoadService } from './app-load.service';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
+import { environment } from 'src/environments/environment.prod';
 
 /**
  * App_initializer is used to get a list of restaurants from the server
@@ -26,7 +28,10 @@ export function get_restaurants(appLoadService: AppLoadService) {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.googleApiKey
+    })
   ],
   providers: [
     AppLoadService,

@@ -9,6 +9,7 @@ import { IRestaurant } from '../restaurant';
   styleUrls: ['./restaurant-detail.component.scss']
 })
 export class RestaurantDetailComponent implements OnInit {
+  // TODO: unit tests
   public restaurant: IRestaurant;
 
   constructor(private route: ActivatedRoute, private appLoadService: AppLoadService) { }

@@ -1,5 +1,10 @@
 <div class="restaurant-map">
-  <!-- TODO: map here -->
+  <!-- TODO: make sure this npm package is not affecting app performance -->
+  <!-- TODO: remove map controls -->
+  <!-- TODO: style the map and marker -->
+  <agm-map [latitude]="restaurant.location.lat" [longitude]="restaurant.location.lng" [zoom]="16">
+    <agm-marker [latitude]="restaurant.location.lat" [longitude]="restaurant.location.lng"></agm-marker>
+  </agm-map>
 </div>
 <div class="restaurant-header">
   <div class="restaurant-name">{{restaurant.name}}</div>

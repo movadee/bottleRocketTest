@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class AppLoadService {
+  // TODO: unit tests
   private restaurants: IRestaurant[];
   private restaurantsUrl = environment.restaurantsUrl;
 

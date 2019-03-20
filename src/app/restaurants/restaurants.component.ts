@@ -8,6 +8,7 @@ import { IRestaurant } from '../restaurant';
   styleUrls: ['./restaurants.component.scss']
 })
 export class RestaurantsComponent implements OnInit {
+  // TODO: unit tests
   public restaurants: IRestaurant[];
 
   constructor(private appLoadService: AppLoadService) { }
