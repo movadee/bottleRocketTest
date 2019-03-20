@@ -7,17 +7,29 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class AppLoadService {
-  public restaurants: IRestaurant[];
+  private restaurants: IRestaurant[];
   private restaurantsUrl = environment.restaurantsUrl;
 
   constructor(private http: HttpClient) { }
 
-  getRestaurants (): Promise<IRestaurant[]> {
+  public getRestaurantsList(): IRestaurant[] {
+    return this.restaurants;
+  }
+
+  /**
+   * Due to not having a unique ID assigned to a restaurant
+   * I am finding restaurants based on a name
+   * TODO: confirm what to use for as a unique ID of the restaurant
+   */
+  public getRestaurantsDetail(id: string): IRestaurant {
+    return this.restaurants.find(restaurant => restaurant.name === id);
+  }
+
+  getRestaurants(): Promise<any> {
     const promise = this.http.get<IRestaurant[]>(this.restaurantsUrl)
       .toPromise()
       .then(restaurants => {
-        console.log(`LOADING: `);
-        this.restaurants = restaurants;
+        this.restaurants = restaurants['restaurants'];
         return restaurants;
       });
     return promise;

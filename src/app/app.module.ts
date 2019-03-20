@@ -5,14 +5,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppLoadService } from './app-load.service';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 
+/**
+ * App_initializer is used to get a list of restaurants from the server
+ * before application is loaded. This way, app will have initial data on load
+ * and user will have a flawless experience.
+ */
 export function get_restaurants(appLoadService: AppLoadService) {
   return () => appLoadService.getRestaurants();
 }
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RestaurantsComponent,
+    RestaurantDetailComponent
   ],
   imports: [
     BrowserModule,

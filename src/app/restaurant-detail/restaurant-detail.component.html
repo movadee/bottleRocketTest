@@ -1,0 +1,17 @@
+<div class="restaurant-map">
+  <!-- TODO: map here -->
+</div>
+<div class="restaurant-header">
+  <div class="restaurant-name">{{restaurant.name}}</div>
+  <div class="restaurant-category">{{restaurant.category}}</div>
+</div>
+<div class="restaurant-info">
+  <div class="restaurant-address">
+    {{restaurant.location.formattedAddress[0]}} <br>
+    {{restaurant.location.formattedAddress[1]}}
+  </div>
+  <ng-container *ngIf="restaurant.contact">
+    <a class="restaurant-phone" href="tel:9723872337">{{restaurant.contact.formattedPhone}}</a>
+    <a *ngIf="restaurant.contact.twitter" class="restaurant-twitter" href="https://twitter.com/hopdoddy">@{{restaurant.contact.twitter}}</a>
+  </ng-container>
+</div>
