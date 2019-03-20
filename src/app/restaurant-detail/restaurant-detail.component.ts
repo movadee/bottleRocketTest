@@ -20,7 +20,7 @@ export class RestaurantDetailComponent implements OnInit {
 
   getRestaurantDetail(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.restaurant = this.appLoadService.getRestaurantsDetail(id);
+    this.restaurant = this.appLoadService.getRestaurantDetail(id);
   }
 
 }

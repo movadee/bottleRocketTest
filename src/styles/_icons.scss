@@ -4,6 +4,12 @@
 	background-size: contain;
 	background-position: 50% 50%;
 
+	&-back {
+		width: 13px;
+		height: 25px;
+		background-image: url('../assets/icons/ic_webBack@2x.png');
+	}
+
 	&-map {
 		width: 30px;
 		height: 30px;

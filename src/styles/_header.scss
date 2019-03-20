@@ -7,6 +7,14 @@
 	left: 0;
 	width: 100%;
 
+	&-back {
+		display: inline-block;
+		padding: 12px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+
 	h1 {
 		margin: 0;
 		padding: 30px 0 15px;

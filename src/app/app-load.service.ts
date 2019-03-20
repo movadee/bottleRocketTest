@@ -22,7 +22,7 @@ export class AppLoadService {
    * I am finding restaurants based on a name
    * TODO: confirm what to use for as a unique ID of the restaurant
    */
-  public getRestaurantsDetail(id: string): IRestaurant {
+  public getRestaurantDetail(id: string): IRestaurant {
     return this.restaurants.find(restaurant => restaurant.name === id);
   }
 
