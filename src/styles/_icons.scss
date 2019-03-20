@@ -1,0 +1,30 @@
+.icon {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 50% 50%;
+
+	&-back {
+		width: 13px;
+		height: 25px;
+		background-image: url('../assets/icons/ic_webBack@2x.png');
+	}
+
+	&-map {
+		width: 30px;
+		height: 30px;
+		background-image: url('../assets/icons/icon_map@2x.png');
+	}
+
+	&-lunch {
+		width: 24px;
+		height: 25px;
+		background-image: url('../assets/icons/tab_lunch@2x.png');
+	}
+
+	&-internets {
+		width: 18px;
+		height: 22px;
+		background-image: url('../assets/icons/tab_internets@2x.png');
+	}
+}

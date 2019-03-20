@@ -1,0 +1,22 @@
+<div class="restaurant-map">
+  <!-- TODO: make sure this npm package is not affecting app performance -->
+  <!-- TODO: remove map controls -->
+  <!-- TODO: style the map and marker -->
+  <agm-map [latitude]="restaurant.location.lat" [longitude]="restaurant.location.lng" [zoom]="16">
+    <agm-marker [latitude]="restaurant.location.lat" [longitude]="restaurant.location.lng"></agm-marker>
+  </agm-map>
+</div>
+<div class="restaurant-header">
+  <div class="restaurant-name">{{restaurant.name}}</div>
+  <div class="restaurant-category">{{restaurant.category}}</div>
+</div>
+<div class="restaurant-info">
+  <div class="restaurant-address">
+    <div>{{restaurant.location.formattedAddress[0]}}</div>
+    <div>{{restaurant.location.formattedAddress[1]}}</div>
+  </div>
+  <ng-container *ngIf="restaurant.contact">
+    <a class="restaurant-phone" href="tel:{{restaurant.contact.phone}}">{{restaurant.contact.formattedPhone}}</a>
+    <a *ngIf="restaurant.contact.twitter" class="restaurant-twitter" href="https://twitter.com/{{restaurant.contact.twitter}}">@{{restaurant.contact.twitter}}</a>
+  </ng-container>
+</div>

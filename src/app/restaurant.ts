@@ -1,23 +1,27 @@
+// TODO: confirm optional/mandatory fields
 export interface IRestaurant {
 	name: string;
-	backgroundImageURL?: string;
-	category?: string;
-	contact?: IContact;
-	location?: ILocation;
+	backgroundImageURL: string;
+	category: string;
+	contact: IContact | null;
+	location: ILocation;
 }
 
-export interface IContact {
+interface IContact {
 	phone: string;
 	formattedPhone: string;
-	twitter: string;
+	twitter?: string;
+	facebook?: string;
+	facebookUsername?: string;
+	facebookName?: string;
 }
 
-export interface ILocation {
+interface ILocation {
 	address: string;
-	crossStreet: string;
+	crossStreet?: string;
 	lat: number;
 	lng: number;
-	postalCode: string;
+	postalCode?: string;
 	cc: string;
 	city: string;
 	state: string;
