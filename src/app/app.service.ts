@@ -25,6 +25,7 @@ export class AppService {
     return this.restaurants.find(restaurant => restaurant.name === id);
   }
 
+  // TODO: need an error handling method
   getRestaurants(): Promise<any> {
     const promise = this.http.get<IRestaurant[]>(this.restaurantsUrl)
       .toPromise()
