@@ -3,7 +3,7 @@ import { trigger, style, animate, transition, query, animateChild, group } from 
 // TODO: touch base with designers on animation specifics
 export const slideInAnimation =
   trigger('routeAnimations', [
-    transition('RestaurantsPage <=> RestaurantDetailPage', [
+    transition('RestaurantListPage <=> RestaurantDetailPage', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -27,4 +27,4 @@ export const slideInAnimation =
       ]),
       query(':enter', animateChild()),
     ])
-	]);
+  ]);

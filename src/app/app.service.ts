@@ -6,23 +6,22 @@ import { environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class AppLoadService {
-  // TODO: unit tests
+export class AppService {
   private restaurants: IRestaurant[];
   private restaurantsUrl = environment.restaurantsUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  public getRestaurantsList(): IRestaurant[] {
+  getRestaurantList(): IRestaurant[] {
     return this.restaurants;
   }
 
   /**
-   * Due to not having a unique ID assigned to a restaurant
-   * I am finding restaurants based on a name
-   * TODO: confirm what to use for as a unique ID of the restaurant
+   * TODO: Due to missing restaurant unique ID in json file
+   * I am finding restaurants based on a name. Need to
+   * confirm which key should be used as a restaurant unique identifier
    */
-  public getRestaurantDetail(id: string): IRestaurant {
+  getRestaurantDetail(id: string): IRestaurant {
     return this.restaurants.find(restaurant => restaurant.name === id);
   }
 

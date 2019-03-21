@@ -1,27 +1,22 @@
 <div class="wrapper">
 
-  <!-- START HEADER -->
+  <!-- HEADER -->
   <header class="header">
-    <!-- TODO: confirm that I hav ea right icon file. Seems like this icon is way thinner than the one in comps -->
-    <!-- <ng-container hidden="true">bla</ng-container> -->
     <a hidden id="backBtn" class="header-back" (click)="goToRestaurantListPage()">
       <span class="icon icon-back"></span>
     </a>
-    <!-- TODO: do we need translation? -->
     <h1>Lunch Tyme</h1>
     <span class="icon icon-map"></span>
   </header>
-  <!-- END HEADER -->
 
-  <!-- <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
-    <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
-  </div> -->
 
+  <!-- MAIN CONTENT -->
   <main class="main" [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
-  </main> 
+  </main>
 
-  <!-- START FOOTER -->
+
+  <!-- FOOTER -->
   <footer class="footer">
     <ul class="footer-tabs">
       <li>
@@ -38,6 +33,5 @@
       </li>
     </ul>
   </footer>
-  <!-- END FOOTER -->
 
 </div>

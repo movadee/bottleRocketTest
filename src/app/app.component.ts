@@ -4,10 +4,7 @@ import { slideInAnimation } from './animations';
 
 @Component({
   selector: 'app-root',
-  animations: [
-    slideInAnimation
-    // animation triggers go here
-  ],
+  animations: [slideInAnimation],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -15,12 +12,11 @@ export class AppComponent {
 
   constructor(private router: Router) {}
 
-  // TODO: unit tests
-  prepareRoute(outlet: RouterOutlet) {
+  prepareRoute(outlet: RouterOutlet): any {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 
-  goToRestaurantListPage() {
+  goToRestaurantListPage(): void {
     this.router.navigate(['/restaurants']);
   }
 }

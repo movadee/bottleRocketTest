@@ -1,24 +1,26 @@
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 
-	&::before, &::after {
-		box-sizing: inherit;
-	}
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Avenir Next', sans-serif;
+html,
+body {
+  height: 100%;
+  font-family: 'Avenir Next', sans-serif;
 }
 
 .main {
-	padding: 64px 0 50px;
+  padding: 64px 0 50px;
 
-	@media (min-width: 768px) {
-		padding-bottom: 0;
-	}
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+  }
 }
 
 agm-map {
-	height: 180px;
+  height: 180px;
 }

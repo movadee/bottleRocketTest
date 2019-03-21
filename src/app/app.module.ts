@@ -6,8 +6,8 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppLoadService } from './app-load.service';
-import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { AppService } from './app.service';
+import { RestaurantsComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { environment } from 'src/environments/environment.prod';
 
@@ -16,8 +16,8 @@ import { environment } from 'src/environments/environment.prod';
  * before application is loaded. This way, app will have initial data on load
  * and user will have a flawless experience.
  */
-export function get_restaurants(appLoadService: AppLoadService) {
-  return () => appLoadService.getRestaurants();
+export function get_restaurants(appService: AppService) {
+  return () => appService.getRestaurants();
 }
 
 @NgModule({
@@ -36,8 +36,8 @@ export function get_restaurants(appLoadService: AppLoadService) {
     })
   ],
   providers: [
-    AppLoadService,
-    { provide: APP_INITIALIZER, useFactory: get_restaurants, deps: [AppLoadService], multi: true },
+    AppService,
+    { provide: APP_INITIALIZER, useFactory: get_restaurants, deps: [AppService], multi: true },
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,6 @@
 <div class="restaurant-map">
   <!-- TODO: make sure this npm package is not affecting app performance -->
-  <!-- TODO: remove map controls -->
-  <!-- TODO: style the map and marker -->
+  <!-- TODO: remove map controls; style the map and marker -->
   <agm-map [latitude]="restaurant.location.lat" [longitude]="restaurant.location.lng" [zoom]="16">
     <agm-marker [latitude]="restaurant.location.lat" [longitude]="restaurant.location.lng"></agm-marker>
   </agm-map>

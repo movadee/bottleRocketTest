@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AppLoadService } from '../app-load.service';
+import { AppService } from '../app.service';
 import { IRestaurant } from '../restaurant';
 
 @Component({
   selector: 'app-restaurant-detail',
-  templateUrl: './restaurant-detail.component.html',
-  styleUrls: ['./restaurant-detail.component.scss']
+  templateUrl: './restaurant-detail.component.html'
 })
 export class RestaurantDetailComponent implements OnInit {
-  // TODO: unit tests
-  public restaurant: IRestaurant;
+  restaurant: IRestaurant;
 
-  constructor(private route: ActivatedRoute, private appLoadService: AppLoadService) { }
+  constructor(private route: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit() {
     this.getRestaurantDetail();
@@ -21,11 +19,11 @@ export class RestaurantDetailComponent implements OnInit {
 
   getRestaurantDetail(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.restaurant = this.appLoadService.getRestaurantDetail(id);
+    this.restaurant = this.appService.getRestaurantDetail(id);
   }
 
-  // HACK: temp solution. Need to find a better way to show/hide back btn
-  showBackBtn() {
+  // TODO: this is a temp solution. Need to find a better way to show/hide back btn
+  showBackBtn(): void {
     const backBtn = document.getElementById('backBtn');
     backBtn.setAttribute('style', 'display: inline-block');
   }
