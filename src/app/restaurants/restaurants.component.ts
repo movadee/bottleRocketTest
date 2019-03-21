@@ -15,10 +15,17 @@ export class RestaurantsComponent implements OnInit {
 
   ngOnInit() {
     this.getRestaurantsList();
+    this.hideBackBtn();
   }
 
   getRestaurantsList(): void {
     this.restaurants = this.appLoadService.getRestaurantsList();
+  }
+
+  // HACK: temp solution. Need to find a better way to show/hide back btn
+  hideBackBtn() {
+    const backBtn = document.getElementById('backBtn');
+    backBtn.setAttribute('style', 'display: none');
   }
 
 }

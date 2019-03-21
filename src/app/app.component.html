@@ -2,9 +2,9 @@
 
   <!-- START HEADER -->
   <header class="header">
-    <!-- TODO: confirm that I hav ea right icon file.
-              Seems like this icon is way thinner than the one in comps -->
-    <a routerLink="/" class="header-back" (click)="toggle()">
+    <!-- TODO: confirm that I hav ea right icon file. Seems like this icon is way thinner than the one in comps -->
+    <!-- <ng-container hidden="true">bla</ng-container> -->
+    <a hidden id="backBtn" class="header-back" (click)="goToRestaurantListPage()">
       <span class="icon icon-back"></span>
     </a>
     <!-- TODO: do we need translation? -->

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 import { slideInAnimation } from './animations';
 
 @Component({
@@ -12,8 +12,15 @@ import { slideInAnimation } from './animations';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(private router: Router) {}
+
   // TODO: unit tests
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
+
+  goToRestaurantListPage() {
+    this.router.navigate(['/restaurants']);
   }
 }

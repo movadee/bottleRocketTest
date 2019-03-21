@@ -16,11 +16,18 @@ export class RestaurantDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getRestaurantDetail();
+    this.showBackBtn();
   }
 
   getRestaurantDetail(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.restaurant = this.appLoadService.getRestaurantDetail(id);
+  }
+
+  // HACK: temp solution. Need to find a better way to show/hide back btn
+  showBackBtn() {
+    const backBtn = document.getElementById('backBtn');
+    backBtn.setAttribute('style', 'display: inline-block');
   }
 
 }
